@@ -1,6 +1,6 @@
 openapi: 3.0.0
 info:
-  title: Jira clone
+  title: White-tea API docs
   version: 0.0.1
 servers:
   - url: https://9b359ezcwb.execute-api.us-east-1.amazonaws.com
@@ -20,6 +20,5 @@ x-tagGroups:
       - Users
 
 paths:
-  #Accounts
   /users:
     $ref: ./api/users/users.yaml
