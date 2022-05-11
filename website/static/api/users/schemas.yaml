@@ -1,0 +1,15 @@
+User:
+  type: object
+  required:
+    - id
+    - accountId
+  properties:
+    id:
+      type: string
+    accountId:
+      type: string
+
+getUsersResponse:
+  type: array
+  items:
+    $ref: "#/User"

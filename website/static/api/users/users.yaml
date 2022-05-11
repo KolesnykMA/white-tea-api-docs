@@ -1,0 +1,15 @@
+get:
+  tags:
+    - Users
+  operationId: getUsers
+  summary: Get users on account
+  description: Account info is passed in JWT
+  security:
+    - auth_token: []
+  responses:
+    200:
+      description: Success
+      content:
+        application/json:
+          schema:
+            $ref: "./schemas.yaml#/getUsersResponse"
