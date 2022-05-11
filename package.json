@@ -1,7 +1,6 @@
 {
-  "name": "shelf-openapi-spec",
+  "name": "white-tea-api-docs",
   "version": "0.0.1",
-  "private": true,
   "scripts": {
     "build": "redoc-cli build website/swagger.yaml --output build/index.html",
     "lint": "openapi lint website/swagger.yaml",
@@ -11,7 +10,7 @@
     "redoc-cli": "0.13.12"
   },
   "devDependencies": {
-    "@redocly/openapi-cli": "1.0.0-beta.76",
+    "@redocly/openapi-cli": "1.0.0-beta.95",
     "husky": "4.3.8"
   },
   "husky": {
