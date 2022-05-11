@@ -3,12 +3,6 @@ version: 2.1
 orbs:
   aws-s3: circleci/aws-s3@3.0
 
-install_deps: &install_deps
-  name: install deps
-  command: |
-    yarn install --pure-lockfile --ignore-scripts --no-progress
-    cd website && yarn install --pure-lockfile --ignore-scripts --no-progress
-
 jobs:
   build:
     docker:
@@ -37,9 +31,7 @@ jobs:
     steps:
       - attach_workspace:
           at: ~/project
-      - aws-s3/copy:
-          aws-access-key-id: AWS_ACCESS_KEY_ID
-          aws-secret-access-key: AWS_SECRET_ACCESS_KEY
+      - aws-s3/sync:
           arguments: --acl public-read --cache-control "no-cache"
           from: ./website/build/index.html
           to: "s3://backend-api-docs"
