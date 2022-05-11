@@ -35,7 +35,6 @@ jobs:
           arguments: --acl public-read --cache-control "no-cache"
           from: ./website/build/index.html
           to: "s3://backend-api-docs"
-          overwrite: true
 
 workflows:
   build_deploy:
