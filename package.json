@@ -3,25 +3,20 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "build": "redoc-cli bundle website/static/swagger.yaml --output website/build/index.html",
-    "lint": "openapi lint website/static/swagger.yaml",
-    "start": "npm run lint && redoc-cli serve website/static/swagger.yaml --ssr --watch --port 3000",
-    "start:cil": "npm run lint && redoc-cli serve website/static/cil.yaml --ssr --watch --port 3000"
+    "build": "redoc-cli build website/swagger.yaml --output build/index.html",
+    "lint": "openapi lint website/swagger.yaml",
+    "start": "npm run lint && redoc-cli serve website/swagger.yaml --ssr --watch --port 3000"
   },
   "dependencies": {
-    "redoc-cli": "0.13.2"
+    "redoc-cli": "0.13.12"
   },
   "devDependencies": {
     "@redocly/openapi-cli": "1.0.0-beta.76",
-    "@shelf/prettier-config": "1.0.0",
-    "husky": "7.0.4",
-    "lint-staged": "12.3.5",
-    "prettier": "2.5.1"
+    "husky": "4.3.8"
   },
-  "lint-staged": {
-    "*.{md,yml,html,css}": [
-      "openapi lint website/static/swagger.yaml",
-      "prettier --write"
-    ]
+  "husky": {
+    "hooks": {
+      "pre-commit": "openapi lint website/swagger.yaml"
+    }
   }
 }

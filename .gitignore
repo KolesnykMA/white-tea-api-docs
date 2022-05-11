@@ -1,7 +1,7 @@
 .idea
 
 node_modules
-website/build/index.html
+build/index.html
 
 
 
