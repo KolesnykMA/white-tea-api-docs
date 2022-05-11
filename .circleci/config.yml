@@ -21,7 +21,7 @@ jobs:
       - persist_to_workspace:
           root: ~/project
           paths:
-            - ./website/build/index.html
+            - ./website/build/*
 
   deploy:
     docker:
@@ -33,7 +33,7 @@ jobs:
           at: ~/project
       - aws-s3/sync:
           arguments: --acl public-read --cache-control "no-cache"
-          from: ./website/build/index.html
+          from: ./website/build/
           to: "s3://backend-api-docs"
 
 workflows:
