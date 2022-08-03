@@ -1,1 +1,2 @@
-# white-tea-api-docs
+# swagger-api-docs
+Auto generated static website based on swagger specification
